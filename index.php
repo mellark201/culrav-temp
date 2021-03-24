@@ -115,28 +115,24 @@ header{mix-blend-mode:none !important;}
         </center>
     </div>
 
-    <div id="logo-compliment">
-        <!--<h3 class="sm-show" style="margin:0;">2nd - 5th April, 2021</h3>
-        <!-- <p class="sm-show" style="margin:0;margin-bottom:40px;line-height:normal;font-size:3.2vw;display:none;">Registrations are open<br/>till 11th May 11:59:59!</p> -->
-       <!-- <a class="button-square" style="position: absolute;bottom:10%" onclick="javascript:getRegister()">Register</a>-->
-    </div>
-    <div class="sm-hide" style="position: absolute;left:37%;bottom:18%;z-index:100;text-align:center;">
+    
+    <div class="sm-hide" id="sm">
         <h3>2nd - 5th April, 2021</h3>
         <p style="margin:5px 0 0;font-size:15px;line-height:24px;">
         <!-- Registrations are open till 11th May 11:59:59!<br> -->
         Read about our events and register.</p>
         
     </div>
-    <a class="button-square" style="position: absolute;left:45%;bottom:5%" onclick="javascript:getRegister()">Register</a>
+    <a  id ="reg" class="button-square" style="" onclick="javascript:getRegister()">Register</a>
     <div id="more"><h5 style="width:50vh;margin:0"><span></span> there's more where that came from</h5></div>
 
 </section>
 
-<!-- <div class="heartbeat-sound">
+<div class="heartbeat-sound">
     <audio>
         <source src = "audio/heartbeat.mp3"></source>
     </audio>
-</div> -->
+</div>
 
 <section style="margin:20vh 0 20vh 0;">
     <div id="about_us">
