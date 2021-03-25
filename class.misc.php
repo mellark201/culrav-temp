@@ -126,7 +126,7 @@ class misc{
      * To Register the Students for the portal
      * Registering the Students by all the values
      */
-    public function registerParticipants($username,$name,$email,$sex,$aadhaar,$contact,$college,$password){
+    public function registerParticipants($username,$name,$email,$sex,$aadhaar,$contact,$college,$password, $idcard){
         $username = $this->sql->escape($username);
         $name = $this->sql->escape($name);
         $email = $this->sql->escape($email);
@@ -135,6 +135,7 @@ class misc{
         $contact = $this->sql->escape($contact);
         $college = $this->sql->escape($college);
         $password = $this->sql->escape($password);
+        $idcard = $this->sql->escape($idcard);
         $password = md5($password);
         $username = strtolower($username);
         if(!$this->is_natural_number($aadhaar)){$result['status'] = -1; $result['errorField'] = 'aadhaar';$result['errorMsg'] = 'Aadhaar invalid'; return $result;}
@@ -149,6 +150,7 @@ class misc{
         if($contact == ''){$result['status'] = -1; $result['errorField'] = 'contact';$result['errorMsg'] = 'Contact cannot be blank'; return $result;}
         if($college == ''){$result['status'] = -1; $result['errorField'] = 'college';$result['errorMsg'] = 'College cannot be blank'; return $result;}
         if($password == ''){$result['status'] = -1; $result['errorField'] = 'password';$result['errorMsg'] = 'Password cannot be blank'; return $result;}
+        if($idcard == ''){$result['status'] = -1; $result['errorField'] = 'idcard';$result['errorMsg'] = 'ID Card Link cannot be blank'; return $result;}
 
         /*Handling content issues */
         if($sex != 'M' and $sex !='F'){$result['status'] = -1; $result['errorField'] = 'sex';$result['errorMsg'] = 'Only Male or Female'; return $result;}
@@ -157,13 +159,13 @@ class misc{
         if(strlen($username) < 6){$result['status'] = -1; $result['errorField'] = 'username';$result['errorMsg'] = 'Atleast 6 characters!'; return $result;}
         if (!preg_match("/^[a-zA-Z ]*$/",$name)) {$result['status'] = -1;$result['errorField'] = 'name';$result['errorMsg'] = 'Only letters and whitespace allowed'; return $result;}
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)){$result['status'] = -1; $result['errorField'] = 'email';$result['errorMsg'] = 'Invalid Microsoft Teams Username'; return $result;}
-        if(strlen($aadhaar) != 12){$result['status'] = -1; $result['errorField'] = 'aadhaar';$result['errorMsg'] = 'Aadhaar Number is invalid'; return $result;}
+        if(strlen($aadhaar) != 8 && strlen($aadhaar) != 9){$result['status'] = -1; $result['errorField'] = 'aadhaar';$result['errorMsg'] = 'Aadhaar Number is invalid'; return $result;}
         if(strlen($contact) != 10){$result['status'] = -1; $result['errorField'] = 'contact';$result['errorMsg'] = 'Mobile Number is invalid'; return $result;}
         if(strlen($password) < 6){$result['status'] = -1; $result['errorField'] = 'password';$result['errorMsg'] = 'Must be atleast 6 characters'; return $result;}
         if(!preg_match('/@mnnit.ac.in$/', $email)){$result['status'] = -1; $result['errorField'] = 'email';$result['errorMsg'] = 'Invalid Microsoft Teams Username'; return $result;}
 
         try{
-            $this->sql->query = "INSERT into `users` (username,name,email,sex,aadhaar,contact,college,usertype,PIN,verified,festID) values ('$username','$name','$email','$sex','$aadhaar','$contact','$college','students',NULL,'0',NULL)";
+            $this->sql->query = "INSERT into `users` (username,name,email,sex,aadhaar,contact,college,usertype,PIN,verified,festID,idcard) values ('$username','$name','$email','$sex','$aadhaar','$contact','$college','students',NULL,'0',NULL, '$idcard')";
             $this->sql->process();
             $this->sql->query = "INSERT into `login` (username,password) values ('$username','$password')";
             $this->sql->process();
@@ -541,7 +543,7 @@ class misc{
             }
             else{
                 $result['status'] = -1;
-                $result['msg'] = "You haven't paid your fees yet!";
+                $result['msg'] = "You haven't verified!";
                 return $result;
             }
         }

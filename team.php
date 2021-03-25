@@ -45,6 +45,62 @@ if(($_SERVER['REQUEST_METHOD'] === 'GET') or (isset($_POST['action']) and $_POST
             <div class="celeb-details"></div>
         </div>
 
+        <div class="celeb">
+            <div class="celeb-image">
+                <div class="glitch-image" style="filter:unset;"><img src="images/team/skgupta.png"></div>
+                <div class="celeb-work">Faculty Coordinator</div>
+                <div class="celeb-social-links">
+                    <a><i class="fa fa-facebook"></i></a>
+                    <a><i class="fa fa-twitter"></i></a>
+                    <a><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="celeb-name"><h3>Dr. S.K. Gupta</h3></div>
+            <div class="celeb-details"></div>
+        </div>
+
+        <div class="celeb">
+            <div class="celeb-image">
+                <div class="glitch-image" style="filter:unset;"><img src="images/team/amani.png"></div>
+                <div class="celeb-work">Treasurer</div>
+                <div class="celeb-social-links">
+                    <a><i class="fa fa-facebook"></i></a>
+                    <a><i class="fa fa-twitter"></i></a>
+                    <a><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="celeb-name"><h3>Dr. Ashutosh Mani</h3></div>
+            <div class="celeb-details"></div>
+        </div>
+
+        <div class="celeb">
+            <div class="celeb-image">
+                <div class="glitch-image" style="filter:unset;"><img src="images/team/suantak.png"></div>
+                <div class="celeb-work">Member</div>
+                <div class="celeb-social-links">
+                    <a><i class="fa fa-facebook"></i></a>
+                    <a><i class="fa fa-twitter"></i></a>
+                    <a><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="celeb-name"><h3>Dr. Suantak Kamsonlian</h3></div>
+            <div class="celeb-details"></div>
+        </div>
+
+        <div class="celeb">
+            <div class="celeb-image">
+                <div class="glitch-image" style="filter:unset;"><img src="images/team/jyotsna.png"></div>
+                <div class="celeb-work">Member</div>
+                <div class="celeb-social-links">
+                    <a><i class="fa fa-facebook"></i></a>
+                    <a><i class="fa fa-twitter"></i></a>
+                    <a><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="celeb-name"><h3>Dr. Jyotsna Sinha</h3></div>
+            <div class="celeb-details"></div>
+        </div>
+
     </div>
     <center style="margin:50px 0"><h1><span>Festival Secretary</span></h1></center>
     <div class="flex" style="margin-top:0;">

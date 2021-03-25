@@ -65,7 +65,7 @@ if(isset($_POST['action'])){
             $result['success'] = false;
             $result['msg'] = "Check for errors in your form";
         }
-        $check = $misc->registerParticipants($username,$_POST['name'],$_POST['email'],$_POST['sex'],$_POST['aadhaar'],$_POST['contact'],'Motilal Nehru National Institute of Technology Allahabad',$_POST['password']);
+        $check = $misc->registerParticipants($username,$_POST['name'],$_POST['email'],$_POST['sex'],$_POST['aadhaar'],$_POST['contact'],'Motilal Nehru National Institute of Technology Allahabad',$_POST['password'], $_POST['idcard']);
         if($check['status'] == 1){
             $result['success'] = 1;
             if(!isset($check['msg'])){

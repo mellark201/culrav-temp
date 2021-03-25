@@ -80,8 +80,8 @@ p{line-height:2.4rem;letter-spacing:2px;}
     <p id="sex-check-message" class="error"></p>
   </div>
   <div class="form-field">
-    <label>Aadhaar Number</label>
-    <input name="aadhaar" type="text" maxlength="12" required>
+    <label>Registration Number</label>
+    <input name="aadhaar" type="text" maxlength="9" required>
     <p id="aadhaar-check-message" class="error"></p>
   </div>
   <div class="form-field">
@@ -99,7 +99,26 @@ p{line-height:2.4rem;letter-spacing:2px;}
     <input name="password" type="password" required>
     <p id="password-check-message" class="error"></p>
   </div>
-  <div style="margin-bottom:20px;"><input type="checkbox" name="coc" required><label>I have read the <a href="https://docs.google.com/document/d/1vQIjKcx92rV0bIv1S3UNNbOFXCiQRdaH7YE0dZBMSD4/edit" target="_blank">undertaking</a> and agree to the conditions and will be responsible for my actions.</label></div>
+  <div class="form-field">
+    <label>Undertaking</label>
+    <ul>
+      <li>The use of profane or improper language is not acceptable.</li>
+      <li>All the students should be courteous, mature, cooperative and respectful at all times.</li>
+      <li>All the individuals are themselves responsible for their own actions as well as actions done through their MS Teams account and in case of indiscipline they may be punished accordingly.</li>
+      <li>Sportsmanship and fair play to team-mates, opponents and officials should be in the forefront of the team’s basic philosophy and attitude.</li>
+      <li>No act will promote smoking, use of alcohol and drugs under any circumstances.</li>
+      <li>Teams must obey instructions provided by the institute, FS and team–coordinator.</li>
+      <li>No outside event allowed. They are supposed to be at their respective home/premises/venue. Social distancing needs to be followed for participation in events. Individuals will be responsible if they break rules/guidelines provided by governments and administration. Institute will not be responsible for any such acts.</li>
+      <li>Teams or individuals must ensure that the content of any event and actions must not be vulnerable, vulgar and anti-national.</li>
+    </ul>
+    <div style="margin-bottom:0px;"><input type="checkbox" name="coc" required><label>I have read the undertaking and agree to the conditions and will be responsible for my actions.</label></div>
+  </div>
+  <div class="form-field">
+    <label>ID Card (Provide as Google Drive Link)</label>
+    <input name="idcard" type="text" required>
+    <p id="password-check-message" class="error"></p>
+  </div>
+  <!-- <div style="margin-bottom:20px;"><input type="checkbox" name="coc" required><label>I have read the undertaking and agree to the conditions and will be responsible for my actions.</label></div> -->
   <p id="register-response-message" class="error"></p>
   <div style="width:100%;"><button id="register-button">Register</button><div style="display:inline-block;padding-left:5%;margin:20px auto;"><a href="login" style="color:var(--text-color);">Have an account?</a></div></div>
 </section>
@@ -177,11 +196,12 @@ $('#register-button').on('click',function(){
         var email = $('input[name="email"]').val();
         var sex = $("input[name='sex']:checked").val();
         var aadhaar = $('input[name="aadhaar"]').val();
+        var idcard = $('input[name="idcard"]').val();
         var contact = $('input[name="contact"]').val();
         var college = $('input[name="college"]').val();
         college = "Motilal Nehru National Institute of Technology";
         var password = $('input[name="password"]').val();
-        var data = {'action':'registerParticipants','username':username,'name':name,'email':email,'sex':sex,'aadhaar':aadhaar,'contact':contact,'college':college,'password':password};
+        var data = {'action':'registerParticipants','username':username,'name':name,'email':email,'sex':sex,'aadhaar':aadhaar,'contact':contact,'college':college,'password':password, 'idcard':idcard};
         $.ajax({
             url:'ajax',
             dataType:'json',
