@@ -179,7 +179,7 @@ if(($_SERVER['REQUEST_METHOD'] === 'GET') or (isset($_POST['action']) and $_POST
                     <a href="tel:+917086040412"><i class="fa fa-phone"></i></a>
                 </div>
             </div>
-            <div class="celeb-name"><h3>Himanshu</h3></div>
+            <div class="celeb-name"><h3>Himanshu Singh</h3></div>
         </div>
         
         <div class="celeb" style="width: 12%">

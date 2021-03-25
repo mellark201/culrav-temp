@@ -18,7 +18,7 @@ class misc{
 		include_once('class.config.php');
 		$config = new config();
 		$base = $config->baseServer;
-		require_once($_SERVER['DOCUMENT_ROOT'].$base.'class.sql.php');
+		require_once($_SERVER['DOCUMENT_ROOT'].'/class.sql.php');
 		$this->sql = new sql();
     }
     /*################################################

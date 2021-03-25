@@ -123,7 +123,7 @@ header{mix-blend-mode:none !important;}
         Read about our events and register.</p>
         
     </div>
-    <a  id ="reg" class="button-square" style="" onclick="javascript:getRegister()">Register</a>
+    <a  id ="reg" class="button-square-1" style="" onclick="javascript:getRegister()">Register</a>
     <div id="more"><h5 style="width:50vh;margin:0"><span></span> there's more where that came from</h5></div>
 
 </section>
@@ -236,7 +236,12 @@ header{mix-blend-mode:none !important;}
         <div class="content" data-aos="fade-down" data-aos-anchor-placement="bottom-bottom">
             <!-- <p class="tag">Participate in our events</p> -->
             <!-- <h3 class="heading">NOTHING STOPS US</h3> -->
+            <br>
+            <br>
+            <br>
             <p class="details">Protect yourself and others around you by knowing the facts and taking appropriate precautions. Follow advice provided by your local public health agency.<br/><br/>Avoiding unneeded visits to medical facilities allows healthcare systems to operate more effectively, therefore protecting you and others.</p>
+            <br>
+            <br>
             <br>
             <a class="button-square" onclick="window.location.href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019'">Read More</a>
         </div>
@@ -256,8 +261,13 @@ header{mix-blend-mode:none !important;}
         </div> -->
         <div class="content" data-aos="fade-down" data-aos-anchor-placement="bottom-bottom">
             <p class="tag">Participate in our events</p>
+            <br>
             <h3 class="heading">NOTHING STOPS US</h3>
+            <br>
+            <br>  
             <p class="details">Now participate in our events and keep yourself busy, while also having fun at our events. You can choose your type of events and register for them. All you have to do is register your account on this portal and you're good to go!</p>
+            <br>
+            <br>
             <br>
             <a class="button-square" onclick="javascript:getRegister()">Let's Go <i class="fa fa-arrow-right"></i></a>
         </div>

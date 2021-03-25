@@ -10,7 +10,11 @@ if(($_SERVER['REQUEST_METHOD'] === 'GET') or (isset($_POST['action']) and $_POST
 ?>
 <section style="margin-top:70px;">
     <div id="about_us" style="margin-bottom:0">
-        <div data-aos="fade-down" data-aos-anchor-placement="top-center"><h1 style="animation:unset;">Sit Back and relax<br>We'll help you out</h1><p>It's okay we understand, people forget.<br>Please enter your details below for us to help you out.</p></div>
+        <div data-aos="fade-down" data-aos-anchor-placement="top-center"><h1 style="animation:unset;">Sit Back and relax<br>
+        We'll help you out</h1><p>It's okay we understand, people forget.<br>Please contact the WebAdmin at 
+         </p>
+         
+         <a href="mailto:culravwebteam2021@gmail.com" style="color:beige">culravwebteam2021@gmail.com</a></div>
 </section>
 <?php
 if(!isset($_GET['ID'])){
@@ -47,24 +51,7 @@ if(!isset($_GET['ID'])){
 .success:before{content:'❕';}
 .success:before,.error:before{padding-right:5px;}
 </style>
-<section class="form">
-  <p id="forgot-password-response-message"></p>
-  <div class="form-field">
-    <label>Username</label>
-    <input name="username" type="text" required>
-    <p id="username-check-message" class="error"></p>
-  </div>
-  <div class="form-field">
-    <label>Microsoft Teams Username</label>
-    <input name="email" type="email" required>
-  </div>
-  <div class="form-field">
-    <label>Email</label>
-    <input name="tosendemail" type="email" required>
-  </div>
-  <p style="display:block;"><a href="register" style="color:var(--text-color);">New User? Register Now</a></p>
-  <div style="width:100%;"><button id="forgot-password-button">Submit</button></div>
-</section>
+
 
 <script>
 $('input[name="username"],input[name="email"]').on("keyup",function(e){

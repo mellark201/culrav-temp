@@ -33,7 +33,7 @@
 <body>
 
 <div id="mouse">
-  <div id="clickable-target">clickity</div>
+  <div id="clickable-target"></div>
 </div>
 
 <!--Navigation Bar -->

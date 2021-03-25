@@ -99,7 +99,7 @@ p{line-height:2.4rem;letter-spacing:2px;}
     <input name="password" type="password" required>
     <p id="password-check-message" class="error"></p>
   </div>
-  <div style="margin-bottom:20px;"><input type="checkbox" name="coc" required><label>I have read the <a href="documents/undertaking.pdf" target="_blank">undertaking</a> and agree to the conditions and will be responsible for my actions.</label></div>
+  <div style="margin-bottom:20px;"><input type="checkbox" name="coc" required><label>I have read the <a href="https://docs.google.com/document/d/1vQIjKcx92rV0bIv1S3UNNbOFXCiQRdaH7YE0dZBMSD4/edit" target="_blank">undertaking</a> and agree to the conditions and will be responsible for my actions.</label></div>
   <p id="register-response-message" class="error"></p>
   <div style="width:100%;"><button id="register-button">Register</button><div style="display:inline-block;padding-left:5%;margin:20px auto;"><a href="login" style="color:var(--text-color);">Have an account?</a></div></div>
 </section>

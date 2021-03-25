@@ -336,8 +336,8 @@ function setColors(){
         $('#new-style').html(style);
     }
     else{
-        document.documentElement.style.setProperty('--background-color', 'black');
-        document.documentElement.style.setProperty('--highlight-color', '#55555577');
+        document.documentElement.style.setProperty('--background-color', '#202020');
+        document.documentElement.style.setProperty('--highlight-color', '#000000');
         document.documentElement.style.setProperty('--text-color', 'white');
         $('#silhouette').css("filter","brightness(20%)");
         $('.light-image').css("filter","brightness(0) invert(1)");
