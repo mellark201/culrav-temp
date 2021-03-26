@@ -400,7 +400,7 @@ class misc{
         $transactionID = $this->sql->escape($transactionID);
         $paidAmount = $this->sql->escape($paidAmount);
         if($this->checkIfUserValid($username)){
-            $this->sql->query = "INSERT into `transaction` (transactionID,paidBy,paidTo,paidAmount) values ('$transactionID','$username','Culrav 2020','$paidAmount')";
+            $this->sql->query = "INSERT into `transaction` (transactionID,paidBy,paidTo,paidAmount) values ('$transactionID','$username','Culrav 2021','$paidAmount')";
             $this->sql->process();
             return true;
         }

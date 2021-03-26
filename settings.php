@@ -110,7 +110,7 @@ a.button-square:hover{box-shadow:none;}
             <div id="password-change-box">
                 <form id="password-change-form" action="./settings" method="POST">
                     <h3>Change your password</h3>
-                    <p class="simple">Sometimes you should keep changing your password to stay secure. Security comes first, that's what we follow here at Culrav 2020, having fun alongside all the entertainment.</p>
+                    <p class="simple">Sometimes you should keep changing your password to stay secure. Security comes first, that's what we follow here at Culrav 2021, having fun alongside all the entertainment.</p>
                     <br>
                     <div class="form-field">
                         <label>Old Password</label>
@@ -146,7 +146,7 @@ a.button-square:hover{box-shadow:none;}
                 <?php
                 }
                 else{?>
-                    <p class="simple">Welcome to Culrav 2020</p>
+                    <p class="simple">Welcome to Culrav 2021</p>
                     <p style="font-size:90%;"><?php echo 'FestID: '.$user['festID'];?></p>
                 <?php
                 }?>

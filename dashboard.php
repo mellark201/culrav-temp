@@ -391,7 +391,7 @@ tr:nth-child(even){opacity:0.8;}
                     <?php
                     }
                     else{ ?>
-                        <p class="simple">Welcome to Culrav 2020</p>
+                        <p class="simple">Welcome to Culrav 2021</p>
                         <p style="font-size:90%;"><?php echo 'FestID: '.$user['festID'];?></p>
                     <?php
                     }

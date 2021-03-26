@@ -13,7 +13,7 @@ if(($_SERVER['REQUEST_METHOD'] === 'GET') or (isset($_POST['action']) and $_POST
 ?>
 <section style="margin-top:70px;">
     <div id="about_us" style="margin-bottom:0">
-        <div data-aos="fade-down" data-aos-anchor-placement="top-center"><h1 style="animation:unset;"><span>participate</span> and<br><span>connect</span> with others</h1><br><p style="margin-top:0;font-size:1.6rem;">Register yourself to the events and win amazing prizes alongside having an amazing time at culrav 2020.</p></div>
+        <div data-aos="fade-down" data-aos-anchor-placement="top-center"><h1 style="animation:unset;"><span>participate</span> and<br><span>connect</span> with others</h1><br><p style="margin-top:0;font-size:1.6rem;">Register yourself to the events and win amazing prizes alongside having an amazing time at culrav 2021.</p></div>
 </section>
 <style>
 .form{
