@@ -186,16 +186,16 @@ header{mix-blend-mode:none !important;}
         </div>
     </div>
     <div class="flex display-style-3" style="margin-top:0">
-        <div class="count" >
+        <!--<div class="count" >
             <div class="heading" data-aos="fade-down" data-aos-anchor-placement="bottom-bottom">
                 <h3>03.Celebrity and Pro-Nites</h3>
                 <p>The last two nights of Culrav witnesses thrilling performances from famous celebrities and artists in the fields of rock,hip-hop or EDM.</p>
             </div>
             
-        </div>
+        </div> -->
         <div class="count" >
             <div class="heading" data-aos="fade-down" data-aos-anchor-placement="bottom-bottom">
-                <h3>04.Informal Events</h3>
+                <h3>03.Informal Events</h3>
                 <p>From "Stand-up Comedy" to "Googly Cricket" we have a wide variety of events in our arena, to enthrall the audiences all the time wherein they stand a chance to win lots of goodies and merchandise.</p>
             </div>
             

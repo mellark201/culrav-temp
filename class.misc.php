@@ -160,7 +160,7 @@ class misc{
         if (!preg_match("/^[a-zA-Z ]*$/",$name)) {$result['status'] = -1;$result['errorField'] = 'name';$result['errorMsg'] = 'Only letters and whitespace allowed'; return $result;}
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)){$result['status'] = -1; $result['errorField'] = 'email';$result['errorMsg'] = 'Invalid Microsoft Teams Username'; return $result;}
         if(strlen($aadhaar) != 8 && strlen($aadhaar) != 9){$result['status'] = -1; $result['errorField'] = 'aadhaar';$result['errorMsg'] = 'Aadhaar Number is invalid'; return $result;}
-        if(strlen($contact) != 10){$result['status'] = -1; $result['errorField'] = 'contact';$result['errorMsg'] = 'Mobile Number is invalid'; return $result;}
+        if(strlen($contact) < 10){$result['status'] = -1; $result['errorField'] = 'contact';$result['errorMsg'] = 'Mobile Number is invalid'; return $result;}
         if(strlen($password) < 6){$result['status'] = -1; $result['errorField'] = 'password';$result['errorMsg'] = 'Must be atleast 6 characters'; return $result;}
         if(!preg_match('/@mnnit.ac.in$/', $email)){$result['status'] = -1; $result['errorField'] = 'email';$result['errorMsg'] = 'Invalid Microsoft Teams Username'; return $result;}
 
@@ -509,6 +509,30 @@ class misc{
         $result = array_udiff($all_events,$get_registered_team_events,"misc::eventListComparator");
         return $result;
     }
+    public function getTeamByTeamID($teamID) {
+	$teamID = $this->sql->escape($teamID);
+	return $this->sql->getDataOnlyOne('team_creation_logs', 'teamId', $teamID);
+    }
+
+
+
+
+
+
+
+
+
+	//Changed this Event//////////////////////////
+
+
+
+
+
+
+
+
+
+
     public function registerIndividualEvent($username,$eventID){
         $username = $this->sql->escape($username);
         $eventID = $this->sql->escape($eventID);
@@ -747,7 +771,7 @@ class misc{
         $teamID = $this->sql->escape($teamID);
         $eventID = $this->sql->getData('eventID','team_creation_logs','teamID',$teamID);
         $event = $this->sql->getDatas('events','eventID',$eventID);
-        if($this->getTeamSizeByTeamID($teamID) >= $event['people_count']){ $result['status'] = -1; $result['msg'] = "Team size limit exceeded!"; return $result;}
+        //($this->getTeamSizeByTeamID($teamID) >= $event['people_count']){ $result['status'] = -1; $result['msg'] = "Team size limit exceeded!"; return $result;}
         if($this->checkIfUserValid($username)){
             if($this->sql->countData('users','username',$username,'verified','1') > 0){
                 if($this->sql->countData('scores','eventID',$eventID,'username',$username) == 0){
@@ -956,8 +980,8 @@ class misc{
     public function endEvent($username,$eventID){
         $eventID = $this->sql->escape($eventID);
         if($this->checkIfCoordinator($username,$eventID)){
-            $this->sql->query = "UPDATE events set status = '0' where eventID = '$eventID'";
-            $this->sql->process();
+            //$this->sql->query = "UPDATE events set status = '0' where eventID = '$eventID'";
+            //$this->sql->process();
         }
     }
     public function setRoundSystem($username,$eventID){
@@ -1015,7 +1039,8 @@ class misc{
     public function submissionEvent($username, $eventID, $link){
         $username = $this->sql->escape($username);
         $eventID = $this->sql->escape($eventID);
-        $event = $this->getEventByEventID($eventID);
+	$event = $this->getEventByEventID($eventID);
+	$this->console($username);
         if(count($event) == 0){
             $result['status'] = -1;
             $result['msg'] = "The event doesnot exist!";
@@ -1030,8 +1055,9 @@ class misc{
         if($this->checkIfUserValid($username)){
             $user = $this->getUser($username);
             if($user['verified'] == 1){
-                if($this->sql->getData('status','events','eventID',$eventID) == '1'){
-                    if($this->sql->getData('registrationStatus','events','eventID',$eventID) == '0'){
+		 if($this->sql->getData('status','events','eventID',$eventID) == '1'){
+		    //changing here
+                    if($this->sql->getData('registrationStatus','events','eventID',$eventID) == '0' || $this->sql->getData('registrationStatus', 'events', 'eventID', $eventID) == '1'){
                         if($event['eventtype'] == 'individual'){
                             if($event['rounds'] == 1){
                                 $cur_round = $event['current_round'];
@@ -1118,6 +1144,11 @@ class misc{
         $eventID = $this->sql->escape($eventID);
         return $this->sql->getData('teamID','team_members','username',$username,'eventID',$eventID,'request','yes');
     }
+
+    public function console($data) {
+	    echo("<script>console.log('PHP :".$data."');</script>");
+    }
+
     public function getSubmissionLinkOfEventForUser($username,$eventID){
         $username = $this->sql->escape($username);
         $eventID = $this->sql->escape($eventID);
@@ -1129,7 +1160,7 @@ class misc{
             $user = $this->getUser($username);
             if($user['verified'] == 1){
                 if($this->sql->getData('status','events','eventID',$eventID) == '1'){
-                    if($this->sql->getData('registrationStatus','events','eventID',$eventID) == '0'){
+                    if($this->sql->getData('registrationStatus','events','eventID',$eventID) == '0' || $this->sql->getData('registrationStatus', 'events', 'eventID', $eventID)=='1'){
                         $data = "";
                         if($event['eventtype'] == 'individual')
                             if($this->sql->countData('submissionlinks','username',$username,'eventID',$eventID) > 0)
@@ -1267,14 +1298,17 @@ class misc{
         return $result;
     }
     public function timeLeftForNextRound($eventID){
+	    $this->console("Shubham is here");
         $eventID = $this->sql->escape($eventID);
         $event = $this->getEventByEventID($eventID);
         if(!isset($event['eventID'])){
             return "Event Does Not Exists!";
         }
-        if($event['status'] == 0){ return "Wait for the results to be declared!"; }
+	if($event['status'] == 0){ return "Wait for the results to be declared!"; }
+	$this->console("Waiting next");
         $cur_round = $event['current_round'];
-        if($cur_round == NULL){ $this->updateRounds(); $cur_round = 1;}
+	if($cur_round == NULL){ $this->updateRounds(); $cur_round = 1;}
+//	if($cur_round==NULL) {$cur_round=1;}
         $total_rounds = $this->getTotalRoundsForEvent($event['eventID']);
         if($total_rounds < $cur_round){ return false; }
         $fromTime = $this->sql->getData('timestamp','event_commence_time','eventID',$eventID);
@@ -1288,7 +1322,8 @@ class misc{
         $time = strtotime($query,strtotime($fromTime));
         $currentTime = strtotime("now");
         $difference = $time - $currentTime;
-        if($difference < 0){ $this->updateRounds(); return false;}
+if($difference < 0){ $this->updateRounds(); return false;}
+//	if($difference<0) {return false;}
         return date("d",$difference)." days ".date("h",$difference)." hours ".date("m",$difference)." minutes left!";
     }
     public function isQualified($username,$eventID){
@@ -1327,6 +1362,7 @@ class misc{
         return $this->sql->getDatas('round_submissions','eventID',$event);
     }
     public function updateRounds(){
+	    $this->console("Calling function");
         $events = $this->getAllEvents();
         foreach($events as $event){
             $eventID = $event['eventID'];
@@ -1348,7 +1384,9 @@ class misc{
                         $this->sql->query = "UPDATE `round_submissions` SET submissionLink = 'NULL' where eventID = '$eventID'";
                         $this->sql->process();
                     }
-                    else{   //end Event if rounds have ended
+		    else{
+			    $skjtemp = "Called to Set 0";
+			 $this->console($skjtemp);   
                         $this->sql->query = "UPDATE `events` SET status = '0' where eventID = '$eventID'";
                         $this->sql->process();
                     }

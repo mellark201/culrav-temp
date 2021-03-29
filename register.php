@@ -86,7 +86,7 @@ p{line-height:2.4rem;letter-spacing:2px;}
   </div>
   <div class="form-field">
     <label>Contact Number</label>
-    <input name="contact" type="text" maxlength="10" required>
+    <input name="contact" type="text" maxlength="14" required>
     <p id="contact-check-message" class="error"></p>
   </div>
   <div class="form-field">
@@ -120,7 +120,7 @@ p{line-height:2.4rem;letter-spacing:2px;}
   </div>
   <!-- <div style="margin-bottom:20px;"><input type="checkbox" name="coc" required><label>I have read the undertaking and agree to the conditions and will be responsible for my actions.</label></div> -->
   <p id="register-response-message" class="error"></p>
-  <div style="width:100%;"><button id="register-button">Register</button><div style="display:inline-block;padding-left:5%;margin:20px auto;"><a href="login" style="color:var(--text-color);">Have an account?</a></div></div>
+  <div style="width:100%;"><button id="register-button">Register</button><div style="display:inline-block;padding-left:5%;margin:20px auto;">(If problem occurs while registering through mobile, try through laptop/desktop once).</div></div>
 </section>
 
 <script>
@@ -189,7 +189,7 @@ function checkIfCOCAgreed(){
 $('#register-button').on('click',function(){
     checkFieldsIfBlank();
     var a = $('.form-field > p.error');
-    if(a.length != 0){$('#register-response-message').html("Please fill the form completely.");$('#register-response-message').css("display","block"); return;}
+    //if(a.length != 0){$('#register-response-message').html("Please fill the form completely.");$('#register-response-message').css("display","block"); return;}
     if(checkIfCOCAgreed()){
         var username = $('input[name="username"]').val();
         var name = $('input[name="name"]').val();

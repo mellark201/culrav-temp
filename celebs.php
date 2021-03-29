@@ -6,7 +6,7 @@ if(($_SERVER['REQUEST_METHOD'] === 'GET') or (isset($_POST['action']) and $_POST
 ?>
 <section style="margin-top:70px;">
     <div id="about_us" style="margin-bottom:0">
-        <div data-aos="fade-down" data-aos-anchor-placement="top-center"><h1 style="animation:unset;">We're actually popular,<br> you see.</h1><br><p style="margin-top:10px;margin-bottom:35px;line-height:125%;max-width:90%;">The continuation of the era of celebrities visiting our campus for our cultural festival every year.</p><p class="simple" style="font-size:16px;padding:0;line-height:150%;margin-top:0">*Due to the COVID-19 (Novel Corona Virus Pandemic), we had to drop our plans for the pro night for Culrav 2020. Stay safe.</p></div>
+        <div data-aos="fade-down" data-aos-anchor-placement="top-center"><h1 style="animation:unset;">We're actually popular,<br> you see.</h1><br><p style="margin-top:10px;margin-bottom:35px;line-height:125%;max-width:90%;">The continuation of the era of celebrities visiting our campus for our cultural festival every year.</p><p class="simple" style="font-size:16px;padding:0;line-height:150%;margin-top:0">*Due to the COVID-19 (Novel Corona Virus Pandemic), we had to drop our plans for the pro night for Culrav 2021. Stay safe.</p></div>
 </section>
 
 <section class="celebs">
@@ -33,7 +33,7 @@ if(($_SERVER['REQUEST_METHOD'] === 'GET') or (isset($_POST['action']) and $_POST
             </div>
         </div>
         <div class="celeb-name"><h3>Priyanka Kumari</h3></div>
-        <div class="celeb-details"></div>
+        <div class="celeb-details">Hailing from Bihar, Priyanka Kumari was the second runner-up in the FBB Miss India Pageant in 2017. Prior to this, she worked for TCS as an Assistant System Engineer.</div>
     </div>
 
     <div class="celeb">
@@ -69,7 +69,7 @@ if(($_SERVER['REQUEST_METHOD'] === 'GET') or (isset($_POST['action']) and $_POST
             </div>
         </div>
         <div class="celeb-name"><h3>DJ Zaeden</h3></div>
-        <div class="celeb-details">Piyush Mishra is an Indian film and theatre actor, music director, lyricist, singer and scriptwriter. Mishra grew up in Gwalior, and went to graduate from National School of Drama, Delhi in 1986.He moved to Mumbai in 2002, actor, lyricist and screenwriter, and receiving acclaim for his acting in Maqbool (2003) and Gangs of Wasseypur (2012).</div>
+        <div class="celeb-details">Zaeden is an Indian DJ and record produced, who is well known for his remixes of Coldplay's Magic, Maroon 5's Animals and Don't Wanna Know, and others. He made his debut song "Land of Lords" along with Syzz in the year 2014. He recently worked for the song "Tere Jaane Se" in the year 2017.</div>
     </div>
 
     <div class="celeb">

@@ -13,7 +13,7 @@
             <div class="social-links">
                 <a href="https://facebook.com/mnnit.culrav" class="fa fa-facebook"></a>
                 <a href="https://instagram.com/culrav" class="fa fa-instagram"></a>
-                <a href="mailto:culrav2k20@gmail.com"><i class="fa fa-envelope"></i></a>
+                <a href="mailto:culrav2021@gmail.com"><i class="fa fa-envelope"></i></a>
             </div>
         </div>
         <div>

@@ -183,7 +183,7 @@ tr:nth-child(even){opacity:0.8;}
         <?php if($event['status'] == 1){ ?>
         <div>
             <h3>Delcare the end of event</h3>
-            <p class="simple">Delcare that the events have ended and the results will be announced.</p><br>
+            <p class="simple">Declare that the events have ended and the results will be announced.</p><br>
             <button class="submit-button" onclick="javascript:window.location.href= 'toggleEvent?action=endEvent&eventID=<?php echo $event['eventID'];?>';">End</button>
         </div>
         <?php 
@@ -247,7 +247,7 @@ tr:nth-child(even){opacity:0.8;}
             <p class="simple">Due to some reasons, the team decided to drop the event. Sorry for the inconvinience.</p>
         </div>
         <?php }
-        if($event['registrationStatus'] == 0 and $event['rounds'] != 1){ ?>
+        if(($event['registrationStatus'] == 0 || $event['registrationStatus'] == 1) and $event['rounds'] != 1){ ?>
             <div>
                 <h3>Submissions</h3>
                 <p class="simple">You can check out all the submission links for your event over here. The submissions are sorted according to the time of submission.</p><br/>

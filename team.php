@@ -22,12 +22,9 @@ if(($_SERVER['REQUEST_METHOD'] === 'GET') or (isset($_POST['action']) and $_POST
                 <div class="glitch-image" style="filter:unset;"><img src="images/team/BCKLESS_PRof_Abhishek.png"></div>
                 <div class="celeb-work">Professor in-charge</div>
                 <div class="celeb-social-links">
-                    <a><i class="fa fa-facebook"></i></a>
-                    <a><i class="fa fa-twitter"></i></a>
-                    <a><i class="fa fa-linkedin"></i></a>
                 </div>
             </div>
-            <div class="celeb-name"><h3>Prof. Abhisekh</h3></div>
+            <div class="celeb-name"><h3>Prof. Abhishek Kumar</h3></div>
             <div class="celeb-details"></div>
         </div>
 
@@ -36,9 +33,7 @@ if(($_SERVER['REQUEST_METHOD'] === 'GET') or (isset($_POST['action']) and $_POST
                 <div class="glitch-image" style="filter:unset;"><img src="images/team/BCKLESS_PSAC.png"></div>
                 <div class="celeb-work">Professor in-charge</div>
                 <div class="celeb-social-links">
-                    <a href=""><i class="fa fa-github"></i></a>
-                    <a><i class="fa fa-twitter"></i></a>
-                    <a><i class="fa fa-linkedin"></i></a>
+                  
                 </div>
             </div>
             <div class="celeb-name"><h3>Prof. Rajesh Gupta</h3></div>
@@ -50,9 +45,7 @@ if(($_SERVER['REQUEST_METHOD'] === 'GET') or (isset($_POST['action']) and $_POST
                 <div class="glitch-image" style="filter:unset;"><img src="images/team/skgupta.png"></div>
                 <div class="celeb-work">Faculty Coordinator</div>
                 <div class="celeb-social-links">
-                    <a><i class="fa fa-facebook"></i></a>
-                    <a><i class="fa fa-twitter"></i></a>
-                    <a><i class="fa fa-linkedin"></i></a>
+                  
                 </div>
             </div>
             <div class="celeb-name"><h3>Dr. S.K. Gupta</h3></div>
@@ -64,9 +57,7 @@ if(($_SERVER['REQUEST_METHOD'] === 'GET') or (isset($_POST['action']) and $_POST
                 <div class="glitch-image" style="filter:unset;"><img src="images/team/amani.png"></div>
                 <div class="celeb-work">Treasurer</div>
                 <div class="celeb-social-links">
-                    <a><i class="fa fa-facebook"></i></a>
-                    <a><i class="fa fa-twitter"></i></a>
-                    <a><i class="fa fa-linkedin"></i></a>
+                  
                 </div>
             </div>
             <div class="celeb-name"><h3>Dr. Ashutosh Mani</h3></div>
@@ -78,9 +69,6 @@ if(($_SERVER['REQUEST_METHOD'] === 'GET') or (isset($_POST['action']) and $_POST
                 <div class="glitch-image" style="filter:unset;"><img src="images/team/suantak.png"></div>
                 <div class="celeb-work">Member</div>
                 <div class="celeb-social-links">
-                    <a><i class="fa fa-facebook"></i></a>
-                    <a><i class="fa fa-twitter"></i></a>
-                    <a><i class="fa fa-linkedin"></i></a>
                 </div>
             </div>
             <div class="celeb-name"><h3>Dr. Suantak Kamsonlian</h3></div>
@@ -92,9 +80,6 @@ if(($_SERVER['REQUEST_METHOD'] === 'GET') or (isset($_POST['action']) and $_POST
                 <div class="glitch-image" style="filter:unset;"><img src="images/team/jyotsna.png"></div>
                 <div class="celeb-work">Member</div>
                 <div class="celeb-social-links">
-                    <a><i class="fa fa-facebook"></i></a>
-                    <a><i class="fa fa-twitter"></i></a>
-                    <a><i class="fa fa-linkedin"></i></a>
                 </div>
             </div>
             <div class="celeb-name"><h3>Dr. Jyotsna Sinha</h3></div>
@@ -164,7 +149,7 @@ if(($_SERVER['REQUEST_METHOD'] === 'GET') or (isset($_POST['action']) and $_POST
 
         <div class="celeb">
             <div class="celeb-image">
-                <div class="glitch-image"><img src="images/team/Vikram.png"></div>
+                <div class="glitch-image"><img src="https://i.ibb.co/7VgWwsD/IMG-20210310-152346-removebg-preview.png"></div>
                 <div class="celeb-work">Festival Secretary</div>
                 <div class="celeb-social-links">
                     <a href="mailto:culrav2021@gmail.com"><i class="fa fa-envelope"></i></a>
