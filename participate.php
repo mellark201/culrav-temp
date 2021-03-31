@@ -3,6 +3,14 @@ session_start();
 if(!isset($_SESSION['user']) and !isset($_SESSION['usertype'])){
   header('Location: ./login');
 }
+
+if(isset($_GET['event'])) {
+	$temptemp = $_GET['event'];
+	if($temptemp == 'mr_ms_spandan' || $temptemp == 'patkatha') {
+		header('Location: participate');
+	}
+}
+
 define ("SECRETKEY", "bcd1669c0232a0bfda48a63ecbf16acd");
 include_once('class.misc.php');
 $misc = new misc();
@@ -180,8 +188,11 @@ a.button-square:hover{box-shadow:none;}
                 <select name="select-registered-events">
                     <option value selected default>-- Select an event --</option>
             <?php
-            foreach($participatedEvents as $event){
-                $event = $misc->getEventByEventID($event['eventID']);
+		foreach($participatedEvents as $event){
+			$eventId = $event['eventID'];
+			if($eventId == 'mr_ms_spandan' || $eventId == 'patkatha')
+				continue;
+	                $event = $misc->getEventByEventID($event['eventID']);
                 ?>
                     <option value="participate?event=<?php echo $event['eventID']; ?>"><?php echo $event['event_name']; ?></option>
             <?php
@@ -195,8 +206,11 @@ a.button-square:hover{box-shadow:none;}
                 <select name="select-registered-events" onchange="location = this.value">
                     <option value selected default>-- Select an event --</option>
             <?php
-            foreach($participatedEvents as $event){
-                $event = $misc->getEventByEventID($event['eventID']);
+		    foreach($participatedEvents as $event){
+			$eventId = $event['eventID'];
+			if($eventId == 'mr_ms_spandan' || $eventId == 'patkatha')
+				continue;
+	                $event = $misc->getEventByEventID($event['eventID']);
                 ?>
                     <option value="participate?event=<?php echo $event['eventID']; ?>"><?php echo $event['event_name']; ?></option>
             <?php
@@ -205,7 +219,12 @@ a.button-square:hover{box-shadow:none;}
                 </select>
             <?php
             }
-            ?>
+	?>
+	    <br><br><p class="simple">Submission of entries for <strong>Mr. and Ms. Spandan</strong> and <strong>Patkatha</strong> will take place through Google Forms, the links of which are provided below : </p>
+		<ul>
+			<li> Mr. and Ms. Spandan (Spandan) : <a href="https://forms.gle/DKs9SQsnBJgWKsMe9" target="_blank">Here</a>
+			<li> Patkatha (Rangmanch) : <a href = "https://forms.gle/VmynD8J3UmN5GX6F6" target="_blank">Here</a>
+		</ul>
             </div>
         <?php } ?>
 
@@ -340,6 +359,7 @@ $('#submission-event-button').on('click',function(){
             $('drive-link-message').css("display","block");
         }
     });
+    location.reload();
 });
 <?php
     }

@@ -110,7 +110,8 @@ tr:nth-child(even){opacity:0.8;}
         ?>
             <div class="select-event-to-register">
                 <h3>Select individual events to register</h3>
-                <p class="simple">These events carry points and will be directly alloted and affect your overall performance score.</p>
+		<p class="simple">These events carry points and will be directly alloted and affect your overall performance score.</p>
+		<p class="simple">There might be some issues with Mr. and Ms. Spandan event and Maskhare Event. We are working to resolve this at the earliest.</p>
                 <div class="option-list">
                     <select name="event-to-register">
                         <option selected disabled value>--Select an option--</option>
