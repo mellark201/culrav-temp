@@ -125,7 +125,11 @@ header{mix-blend-mode:none !important;}
     <div id="more"><h5 style="width:50vh;margin:0"><span></span> there's more where that came from</h5></div>
 
 </section>
-
+<div style="width=100%;text-align:center;margin:20px">
+<div data-aos="fade-down" data-aos-anchor-placement="top-center">
+<h3>Today's Schedule</h3>
+<img src="images/day2.png" style="width:70% ;margin:20px auto"></div>
+</div>
 <div class="heartbeat-sound">
     <audio>
         <source src = "audio/heartbeat.mp3"></source>
