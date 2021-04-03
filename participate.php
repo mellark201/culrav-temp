@@ -6,7 +6,7 @@ if(!isset($_SESSION['user']) and !isset($_SESSION['usertype'])){
 
 if(isset($_GET['event'])) {
 	$temptemp = $_GET['event'];
-	if($temptemp == 'mr_ms_spandan' || $temptemp == 'patkatha') {
+	if($temptemp == 'mr_ms_spandan') {
 		header('Location: participate');
 	}
 }
@@ -190,7 +190,7 @@ a.button-square:hover{box-shadow:none;}
             <?php
 		foreach($participatedEvents as $event){
 			$eventId = $event['eventID'];
-			if($eventId == 'mr_ms_spandan' || $eventId == 'patkatha')
+			if($eventId == 'mr_ms_spandan')
 				continue;
 	                $event = $misc->getEventByEventID($event['eventID']);
                 ?>
@@ -208,7 +208,7 @@ a.button-square:hover{box-shadow:none;}
             <?php
 		    foreach($participatedEvents as $event){
 			$eventId = $event['eventID'];
-			if($eventId == 'mr_ms_spandan' || $eventId == 'patkatha')
+			if($eventId == 'mr_ms_spandan')
 				continue;
 	                $event = $misc->getEventByEventID($event['eventID']);
                 ?>
@@ -220,10 +220,11 @@ a.button-square:hover{box-shadow:none;}
             <?php
             }
 	?>
-	    <br><br><p class="simple">Submission of entries for <strong>Mr. and Ms. Spandan</strong> and <strong>Patkatha</strong> will take place through Google Forms, the links of which are provided below : </p>
+	    <br><br><p class="simple">Submission of entries for the following events  will take place through Google Forms, the links of which are provided below : </p>
 		<ul>
-			<li> Mr. and Ms. Spandan (Spandan) : <a href="https://forms.gle/DKs9SQsnBJgWKsMe9" target="_blank">Here</a>
-			<li> Patkatha (Rangmanch) : <a href = "https://forms.gle/VmynD8J3UmN5GX6F6" target="_blank">Here</a>
+			<li> Mr. and Ms. Spandan (Spandan) Round 2 : <a href="https://forms.gle/E8LwZz9k6MWBqEHX8" target="_blank">Here</a>
+		<!---	<li> Patkatha (Rangmanch) : <a href = "https://forms.gle/VmynD8J3UmN5GX6F6" target="_blank">Here</a> --->
+			
 		</ul>
             </div>
         <?php } ?>
