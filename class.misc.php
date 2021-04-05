@@ -11,6 +11,7 @@
  * Branch: Computer Science and Engineering
  * College: MNNIT Allahabad
  * Batch: 2016 - 2020
+ * New Functionalities added by Shubham Kumar Jha, CSE, MNNIT Allahabad, 2018-2022
  */
 class misc{
 	protected $sql;
@@ -18,7 +19,7 @@ class misc{
 		include_once('class.config.php');
 		$config = new config();
 		$base = $config->baseServer;
-		require_once($_SERVER['DOCUMENT_ROOT'].'/class.sql.php');
+		require_once($_SERVER['DOCUMENT_ROOT'].'/culrav/class.sql.php');
 		$this->sql = new sql();
     }
     /*################################################
@@ -822,6 +823,10 @@ class misc{
     public function getEventsByEventClass($eventClass){
         $event = $this->sql->escape($eventClass);
         return $this->sql->getDatas('events','event_class',$eventClass);
+    }
+    public function getResultsByEventsClass($eventClass){
+        $event = $this->sql->escape($eventClass);
+        return $this->sql->getDatas('result','event_class',$eventClass);
     }
     public function getTotalEventsCount(){
         return $this->sql->countData('events');
