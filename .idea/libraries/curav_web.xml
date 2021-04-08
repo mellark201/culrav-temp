@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="curav_web">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/styles/curav_web/marons.zip!/" />
+      <root url="jar://$PROJECT_DIR$/styles/curav_web/sophia_5.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
