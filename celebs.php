@@ -1,4 +1,5 @@
 <?php
+$ttemptemp = "Shubham"
 $title = "Celebs | Culrav";
 if(($_SERVER['REQUEST_METHOD'] === 'GET') or (isset($_POST['action']) and $_POST['action'] != "getContentPage")){
     include_once('components/header.php');
